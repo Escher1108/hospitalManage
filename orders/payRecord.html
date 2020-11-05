@@ -1,0 +1,165 @@
+<!--
+ * @Author: Escher1108
+ * @Website: https://jkgblog.com
+ * @Date: 2020-10-20 10:27:01
+ * @LastEditTime: 2020-10-21 16:50:47
+ * @LastEditors: Do not edit
+ * @FilePath: \HB\Workspace\项目\first\orders\payRecord.html
+ * @Description: 耶斯莫拉
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../assets/css/nav.css">
+    <link rel="stylesheet" href="../assets/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="../font/iconfont.css">
+    <link rel="stylesheet" href="../assets/css/sweetalert2.min.css">
+    <script src="../assets/js/sweetalert2.min.js"></script>
+    <script src="../assets/js/polyfill.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <!-- 面包屑导航 -->
+            <nav class="breadcrumb" aria-label="breadcrumbs">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">财务管理</a></li>
+                    <li class="is-active"><a href="#" aria-current="page">缴费记录</a></li>
+                </ul>
+            </nav>
+            <div class="columns">
+                <div class="column">
+                    <p>请选择你要查询的项目：</p>
+                    <table class="table is-fullwidth is-bordered is-striped is-narrow is-hoverable">
+                        <thead>
+                            <tr>
+                                <th>项目</th>
+                                <!-- <th>
+                                    <div class="select">
+                                        <select>
+                                          <option>Select dropdown</option>
+                                          <option>With options</option>
+                                        </select>
+                                      </div>
+                                </th> -->
+                                <th>日期</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="select is-fullwidth is-multiple is-warning">
+                                        <select name="run" id="select">
+                                            <option value="">请选择：</option>
+                                            <option value="1" name='水电费'>水电费</option>
+                                            <option value="2">医药费</option>
+                                            <option value="3">伙食费</option>
+                                            <option value="4">旅差费</option>
+                                            <option value="5">会议费</option>
+                                            <option value="6">印刷费</option>
+                                            <option value="7">邮电费</option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input class="input" type="date" id="date">
+                                </td>
+                                <td><button class="button is-info" id="search">查询</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 查询信息显示 -->
+        <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">当前查询信息：</p>
+                    <!-- <button class="delete" aria-label="close"></button> -->
+                </header>
+                <section class="modal-card-body">
+                    <!-- Content ... -->
+                    <div class="columns is-fullwidth">
+                        <div class="column">
+                            <!-- 
+                                说明：
+                                此处查询的值是动态获取值，请根据自己需求进行数据绑定
+                             -->
+                            <div>
+                                <b>当前查询项目：</b>
+                                <span>【</span><span id="getName"></span><span>】</span>
+                            </div><br>
+                            <div>
+                                <!-- 
+                                    此处通过查询数据库进行绑定
+                                 -->
+                                <b>查询项目支出：</b>
+                                <span><b>5</b>万元</span>
+                            </div><br>
+                            <div>
+                                <!-- 
+                                    此处通过查询数据库进行绑定，此处id只为演示效果，可删除
+                                 -->
+                                <b>项目缴费时间：</b>
+                                <span><b id="getDate"></b></span>
+                            </div>
+                            <br>
+                            <p>(备注：该查询信息可能受不确定因素影响，仅供参考)</p>
+                        </div>
+                    </div>
+                </section>
+                <footer class="modal-card-foot">
+                    <button class="button is-success" id="confirm">确定</button>
+                </footer>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        $(function () {
+            //查询事件
+            $('#search').on('click', function () {
+                const SELECT = document.querySelector('#select')
+                const MYINDEX = SELECT.selectedIndex
+                const DATE = document.querySelector('#date')
+                const GETDATE = document.querySelector('#getDate')
+                const GETNAME = document.querySelector('#getName')
+                /*
+                此处进行Ajax请求获取支出费用
+                */
+                console.log(DATE.value)
+                if (SELECT.value == "" || DATE.value == "") {
+                    alert('请填写完整信息！')
+                    return false
+                } else {
+                    $('.modal').addClass('is-active')
+                    let i = $('#date').val()
+                    console.log(i)
+                    GETNAME.innerHTML = SELECT.options[MYINDEX].text
+                    GETDATE.innerHTML = i
+                }
+
+            })
+
+            //确定事件，此处无需进行数据请求
+            $('#confirm').on('click', function () {
+                location.reload()
+                $('.modal').removeClass('is-active')
+            })
+        })
+    </script>
+</body>
+
+</html>

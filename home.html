@@ -1,0 +1,160 @@
+<!--
+ * @Author: Escher1108
+ * @Website: https://jkgblog.com
+ * @Date: 2020-10-16 19:27:43
+ * @LastEditTime: 2020-10-21 16:37:28
+ * @LastEditors: Do not edit
+ * @FilePath: \HB\Workspace\项目\first\home.html
+ * @Description: 耶斯莫拉
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <script src="./assets/js/jquery.min.js"></script>
+  <title>HOME</title>
+  <script type="text/javascript">
+    function showLeftTime() {
+      var now = new Date();
+      var year = now.getFullYear();
+      var month = now.getMonth() + 1;
+      var day = now.getDate();
+      var hours = now.getHours();
+      var minutes = now.getMinutes();
+      var seconds = now.getSeconds();
+      //document.all.show.innerHTML = "" + year + "年" + month + "月" + day + "日</br> " + hours + ":" + minutes + ":" + seconds + "";
+      document.getElementById("txt").innerHTML = "" + year + "年" + month + "月" + day + "日 " + hours + ":" + minutes + ":" + seconds + "";
+      //一秒刷新一次显示时间       
+      setTimeout(showLeftTime, 1000);
+    }
+
+    
+  </script>
+  <style>
+    body::-webkit-scrollbar {
+      display: none;
+      overflow-y: scroll;
+    }
+
+    .column {
+      background-color: sienna;
+      width: auto;
+      margin: 5px;
+    }
+  </style>
+</head>
+
+<body onload="showLeftTime()">
+  <div class="container">
+    <div class="box">
+      <h3 class="title">欢迎登录：<span style="color: royalblue;">xxxx</span></h3>
+      <b>北京时间：</b><span id="txt"></span>
+      <b style="padding-left:30px">Your ip:</b>&nbsp&nbsp<span id="getIp"></span>
+      <hr>
+
+      <div class="colums is-desktop">
+        <nav class="level">
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading">Tweets</p>
+              <p class="title">3,456</p>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading">Following</p>
+              <p class="title">123</p>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading">Followers</p>
+              <p class="title">456K</p>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading">Likes</p>
+              <p class="title">789</p>
+            </div>
+          </div>
+        </nav>
+
+        <div class="tile is-ancestor">
+          <div class="tile is-vertical is-8">
+            <div class="tile">
+              <div class="tile is-parent is-vertical">
+                <article class="tile is-child notification is-primary">
+                  <p class="title">Vertical...</p>
+                  <p class="subtitle">Top tile</p>
+                </article>
+                <article class="tile is-child notification is-warning">
+                  <p class="title">...tiles</p>
+                  <p class="subtitle">Bottom tile</p>
+                </article>
+              </div>
+              <div class="tile is-parent">
+                <article class="tile is-child notification is-info">
+                  <p class="title">Middle tile</p>
+                  <p class="subtitle">With an image</p>
+                  <figure class="image is-4by3">
+                    <img src="./assets/images/640x480.png">
+                  </figure>
+                </article>
+              </div>
+            </div>
+            <div class="tile is-parent">
+              <article class="tile is-child notification is-danger">
+                <p class="title">Wide tile</p>
+                <p class="subtitle">Aligned with the right tile</p>
+                <div class="content">
+                  <!-- Content -->
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child notification is-success">
+              <div class="content">
+                <p class="title">Tall tile</p>
+                <p class="subtitle">With even more content</p>
+                <div class="content">
+                  <!-- Content -->
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    //调用父页面方法
+    function getIp() {
+                const URL = 'https://pv.sohu.com/cityjson?ie=utf-8'
+                const Type = 'script'
+                const Method = 'GET'
+                $.ajax({
+                    url: URL,
+                    dataType: Type, //跨域验证
+                    method: Method,
+                }).done(function () {
+                    let ip = returnCitySN.cip
+                    document.querySelector('#getIp').innerText = ip
+                    console.log(ip)
+                });
+
+                
+            }
+            getIp()
+    
+    // $('#父级窗口的objId', window.parent.document).css('height': 'height);  // window可省略不写或者
+    // $(window.parent.document).find("#objId").css('height': 'height);   // window可省略不写
+  </script>
+</body>
+
+</html>

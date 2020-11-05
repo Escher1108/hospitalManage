@@ -1,0 +1,84 @@
+<!--
+ * @Author: Escher1108
+ * @Website: https://jkgblog.com
+ * @Date: 2020-10-14 19:24:21
+ * @LastEditTime: 2020-10-17 10:13:49
+ * @LastEditors: Do not edit
+ * @FilePath: \HB\Workspace\项目\first\login.html
+ * @Description: 小白学编程
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/login.css">
+     <!-- 引入js -->
+     <script src="./assets/js/fontawesome.all.js"></script>
+     <script src="./assets/js/jquery.min.js"></script>
+    <title>登录</title>
+</head>
+<body>
+    <div class="containers">
+        <div class="box-containers">
+            <!-- 左边登录区域 -->
+            <div class="left">
+                <!-- 用户名 -->
+                <h2 style="font-size: 2.0rem;margin-bottom: 8px;font-weight: bold;">用户登录</h2>
+                <div class="field">
+                    <label class="label">Username</label>
+                    <div class="control has-icons-left has-icons-right">
+                      <input class="input is-success" type="text" placeholder="Username" value="bulma">
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-user"></i>
+                      </span>
+                      <span class="icon is-small is-right">
+                        <i class="fas fa-check"></i>
+                      </span>
+                    </div>
+                    <p class="help is-success">This username is available</p>
+                  </div>
+                  
+                  <!-- 密码 -->
+                  <div class="field">
+                    <label class="label">Password</label>
+                    <div class="control has-icons-left has-icons-right">
+                      <input class="input is-success" type="password" placeholder="Password" value="bulma">
+                      <span class="icon is-small is-left">
+                        <i class="fas fa-lock"></i>
+                      </span>
+                      <span class="icon is-small is-right">
+                        <i class="fas fa-check"></i>
+                      </span>
+                    </div>
+                    <p class="help is-success">This password is available</p>
+                  </div>
+
+                  <!-- 记住我 -->
+                  <div class="field">
+                    <div class="control">
+                      <label class="checkbox">
+                        <input type="checkbox">
+                        &nbsp <span class="sp">remember me</span>
+                        <!-- <a href="./register.html" style="margin-left: 12px;">Cilck me Register</a> -->
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- 按钮 -->
+                  <div class="field is-grouped">
+                    <div class="control">
+                      <button class="button is-link">登录</button>
+                    </div>
+                    <div class="control">
+                      <button class="button is-link is-light"><a href="./register.html">注册</a></button>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+   
+</body>
+</html>

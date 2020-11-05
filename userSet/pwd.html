@@ -1,0 +1,103 @@
+<!--
+ * @Author: Escher1108
+ * @Website: https://jkgblog.com
+ * @Date: 2020-10-18 12:35:50
+ * @LastEditTime: 2020-10-19 19:34:09
+ * @LastEditors: Do not edit
+ * @FilePath: \HB\Workspace\项目\first\userSet\pwd.html
+ * @Description: 耶斯莫拉
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/bulma.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <!-- 面包屑导航 -->
+            <nav class="breadcrumb" aria-label="breadcrumbs">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">用户设置</a></li>
+                    <li class="is-active"><a href="#" aria-current="page">修改密码</a></li>
+                </ul>
+            </nav>
+            
+            <!-- 修改密码框 -->
+            <div class="columns">
+                <div class="column is-two-fifths">
+                    <p class="title">修改密码</p>
+                    <p>当前用户</p>
+                    <div class="field">
+                        <p class="control has-icons-left has-icons-right">
+                          <input class="input" type="text" disabled value="admin">
+                          <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                          </span>
+                          <span class="icon is-small is-right">
+                            <i class="fas fa-check"></i>
+                          </span>
+                        </p>
+                      </div>
+
+                    <div class="field">
+                        <p>旧密码</p>
+                        <p class="control has-icons-left has-icons-right">
+                          <input class="input" type="password" placeholder="Password" value="12345678">
+                          <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                          </span>
+                          <span class="icon is-small is-right">
+                            <i class="fas fa-check"></i>
+                          </span>
+                        </p>
+                      </div>
+                      <div class="field">
+                        <p>新密码</p>
+                        <p class="control has-icons-left">
+                          <input class="input" type="password" placeholder="Password">
+                          <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                          </span>
+                        </p>
+                      </div>
+                      <!-- 确认密码 -->
+                      <div class="field">
+                        <p>确认密码</p>
+                        <p class="control has-icons-left">
+                          <input class="input" type="password" placeholder="Password">
+                          <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                          </span>
+                        </p>
+                      </div>
+                      <button class="button is-primary" id="pwd">确认</button>
+                      <button class="button " id="btn">取消</button>
+                </div>
+
+                <!-- 右侧 -->
+                <div class="column">
+                    <img src="../assets/images/pwd.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector("#btn").addEventListener('click',function(){
+            location.reload();
+        })
+
+        document.querySelector('#pwd').addEventListener('click',function(){
+            alert('修改密码成功！')
+            
+            //此处请填写登录界面路径
+            window.parent.location.href = '../login.html'
+        })
+    </script>
+</body>
+</html>

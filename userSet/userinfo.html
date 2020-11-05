@@ -1,0 +1,299 @@
+<!--
+ * @Author: Escher1108
+ * @Website: https://jkgblog.com
+ * @Date: 2020-10-17 10:58:43
+ * @LastEditTime: 2020-10-21 16:51:06
+ * @LastEditors: Do not edit
+ * @FilePath: \HB\Workspace\项目\first\userSet\userinfo.html
+ * @Description: 耶斯莫拉
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/bulma.min.css">
+    <link rel="stylesheet" href="../assets/css/sweetalert2.min.css">
+    <script src="../assets/js/sweetalert2.min.js"></script>
+    <script src="../assets/js/polyfill.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <!-- 面包屑导航 -->
+            <nav class="breadcrumb" aria-label="breadcrumbs">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">用户设置</a></li>
+                    <li class="is-active"><a href="#" aria-current="page">用户信息</a></li>
+                </ul>
+            </nav>
+            <div class="columns is-vcentered is-desktop">
+                <div class="column">
+                    <div class="level">
+                        <div class="level-left">
+                            <p class="title">用户信息</p>
+                        </div>
+                        <div class="level-right">
+                            <button class="button is-info" id="add">添加</button>
+                        </div>
+                    </div>
+                    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>姓名</th>
+                                <th>年龄</th>
+                                <th>性别</th>
+                                <th>科室</th>
+                                <th>职位</th>
+                                <th>联系</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <!-- 表中 -->
+                        <tbody>
+                            <tr>
+                                <th>1</th>
+                                <td>张伟</td>
+                                <td>30</td>
+                                <td>男</td>
+                                <td>骨科</td>
+                                <td>副院长</td>
+                                <td>177xxxxxxxx</td>
+                                <td>
+                                    <div class="button is-info is-small" id="edit">修改</div>
+                                    <div class="button is-danger is-small" id="del">删除</div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>2</th>
+                                <td>吕子乔</td>
+                                <td>32</td>
+                                <td>男</td>
+                                <td>内科</td>
+                                <td>主任</td>
+                                <td>158xxxxxxxx</td>
+                                <td>
+                                    <div class="button is-info is-small" id="edit">修改</div>
+                                    <div class="button is-danger is-small" id="del">删除</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>3</th>
+                                <td>马秀丽</td>
+                                <td>40</td>
+                                <td>女</td>
+                                <td>儿科</td>
+                                <td>医生</td>
+                                <td>158xxxxxxx</td>
+                                <td>
+                                    <div class="button is-info is-small" id="edit">修改</div>
+                                    <div class="button is-danger is-small" id="del">删除</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>4</th>
+                                <td>陈美嘉</td>
+                                <td>32</td>
+                                <td>女</td>
+                                <td>儿科</td>
+                                <td>医生</td>
+                                <td>175xxxxxxxx</td>
+                                <td>
+                                    <div class="button is-info is-small" id="edit">修改</div>
+                                    <div class="button is-danger is-small" id="del">删除</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>5</th>
+                                <td>曾小贤</td>
+                                <td>38</td>
+                                <td>男</td>
+                                <td>神经科</td>
+                                <td>医生</td>
+                                <td>166xxxxxxxx</td>
+                                <td>
+                                    <div class="button is-info is-small" id="edit">修改</div>
+                                    <div class="button is-danger is-small" id="del">删除</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>6</th>
+                                <td>洪世贤</td>
+                                <td>35</td>
+                                <td>男</td>
+                                <td>眼科</td>
+                                <td>科主任</td>
+                                <td>136xxxxxxxx</td>
+                                <td>
+                                    <div class="button is-info is-small" id="edit">修改</div>
+
+                                    <div class="button is-danger is-small" id="del">删除</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- 分页 -->
+                    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+                        <a class="pagination-previous">上一页</a>
+                        <a class="pagination-next">下一页</a>
+                        <ul class="pagination-list">
+                            <li><a class="pagination-link  is-current" aria-label=" page 1" aria-label="Page 1"
+                                    aria-current="page">1</a></li>
+                            <!-- <li><span class="pagination-ellipsis">&hellip;</span></li> -->
+                            <li><a class="pagination-link" aria-label="Goto page 2">2</a></li>
+                            <li><a class="pagination-link" aria-label="Goto Page 3">3</a></li>
+                            <li><a class="pagination-link" aria-label="Goto page 4">4</a></li>
+                            <li><span class="pagination-ellipsis">&hellip;</span></li>
+                            <li><a class="pagination-link" aria-label="Goto page 10">10</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 模态框弹窗 -->
+    <div class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title" id="ptitle"></p>
+                <button class="delete" aria-label="close" id="closed"></button>
+            </header>
+            <section class="modal-card-body">
+                <!-- Content ... -->
+                <!-- 姓名 -->
+                <div class="field fiel">
+                    <div class="control">
+                        <b>姓名</b>
+                        <input id="disable" class="input is-primary" type="text" disabled value="洪世贤">
+                    </div>
+                </div>
+                <!-- 年龄 -->
+                <div class="field fiel">
+                    <div class="control">
+                        <b>年龄</b>
+                        <input id="disable"  class="input is-primary" type="number" disabled value="32">
+                    </div>
+                </div>
+                <!-- 性别 -->
+                <div class="field fiel">
+                    <div class="control">
+                        <b>性别</b>
+                        <div class="select is-fullwidth is-multiple is-info">
+                            <select disabled>
+                              <option>男</option>
+                              <option>女</option>
+                              <option>不愿透露</option>
+                            </select>
+                          </div>
+                    </div>
+                </div>
+                <!-- 职位 -->
+                <div class="field fiel">
+                    <div class="control">
+                        <b>职位</b><br>
+                        <input class="input is-primary" type="text" value="主任">
+                    </div>
+                </div>
+                <!-- 联系 -->
+                <div class="field fiel">
+                    <div class="control">
+                        <b>联系</b><br>
+                        <input class="input is-primary" type="text" value="136xxxxxxxx">
+                    </div>
+                </div>
+                <!-- 科室 -->
+                <div class="field fiel">
+                    <div class="control">
+                        <b>科室</b><br>
+                        <div class="select is-fullwidth is-multiple is-info">
+                            <select>
+                              <option>眼科</option>
+                              <option>骨科</option>
+                              <option>儿科</option>
+                              <option>内科</option>
+                              <option>外科</option>
+                              <option>神经科</option>
+                              <option>放射科</option>
+                              <option>检验科</option>
+                              <option>妇产科</option>
+                              <option>中医科</option>
+                              <option>急诊科</option>
+                              <option>临床科</option>
+                              <option>康复科</option>
+                              <option>保健科</option>
+                              <option>麻醉科</option>
+                              <option>皮肤科</option>
+                              <option>口腔科</option>
+                              <option>理疗科</option>
+                              <option>病理科</option>
+                            </select>
+                          </div>
+                    </div>
+                </div>
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-success">确认</button>
+                <button class="button" id="closed">取消</button>
+            </footer>
+        </div>
+    </div>
+</body>
+<script>
+    //弹窗控制
+    $(function () {
+        //添加信息事件
+        $('#add').on('click',function(){
+            $('.modal').addClass('is-active')
+            $('input[id=disable]').removeAttr('disabled')
+            $('#ptitle').text('添加信息')
+            $('input').val('')
+            $('select').removeAttr('disabled')
+        })
+
+        //编辑信息控制
+        $('div [id=edit]').on('click', function () {
+            $('.modal').addClass('is-active')
+            $('.dd').css({ "display": " none" })
+            $('#ptitle').text('修改信息')
+        })
+
+
+        //全局复用,关闭或取消按钮
+        $('div [id=closed]').on('click', function () {
+            $('.modal').removeClass('is-active')
+            location.reload()
+        })
+
+        //删除按钮
+        $('div [id=del]').on('click', function () {
+            Swal.fire({
+                title: '您确定吗?',
+                text: "您将无法还原！",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes,delete it'
+            }).then((result) => { //promise 请求（es6写法） 可用Ajax
+                if (result.isConfirmed) {
+                    Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                    )
+                }
+            })
+        })
+
+    })
+</script>
+
+</html>

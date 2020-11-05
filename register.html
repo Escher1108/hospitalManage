@@ -1,0 +1,86 @@
+<!--
+ * @Author: Escher1108
+ * @Website: https://jkgblog.com
+ * @Date: 2020-10-14 19:25:48
+ * @LastEditTime: 2020-10-17 10:09:44
+ * @LastEditors: Do not edit
+ * @FilePath: \HB\Workspace\项目\first\register.html
+ * @Description: 小白学编程
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/css/reg.css">
+  <!-- 引入js -->
+  <script src="./assets/js/fontawesome.all.js"></script>
+  <script src="./assets/js/jquery.min.js"></script>
+  <title>注册</title>
+</head>
+
+<body>
+  <div class="con">
+    <div class="reg">
+      <div class="field">
+        <label class="label mylabel">Username</label>
+        <div class="control has-icons-left has-icons-right">
+          <input class="input is-success" type="text" placeholder="Username" value="bulma">
+          <span class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </div>
+        <p class="help is-success">This username is available</p>
+      </div>
+
+      <div class="field">
+        <label class="label mylabel">Password</label>
+        <div class="control has-icons-left has-icons-right">
+          <input class="input is-success" type="Password" placeholder="Password" value="bulma">
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </div>
+        <p class="help is-success">This Password is available</p>
+      </div>
+
+      <div class="field">
+        <label class="label mylabel">Email</label>
+        <div class="control has-icons-left has-icons-right">
+          <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-exclamation-triangle"></i>
+          </span>
+        </div>
+        <p class="help is-danger">This email is invalid</p>
+      </div>
+
+      <!-- 注册登录按钮 -->
+      <div class="rl">
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-link">注册</button>
+          </div>
+          <div class="control">
+            <button class="button is-link is-light"><a href="./login.html">登录</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="imgs">
+    </div>
+  </div>
+</body>
+
+</html>

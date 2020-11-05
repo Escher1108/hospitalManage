@@ -1,0 +1,307 @@
+<!--
+ * @Author: Escher1108
+ * @Website: https://jkgblog.com
+ * @Date: 2020-10-16 14:31:34
+ * @LastEditTime: 2020-11-05 12:01:46
+ * @LastEditors: Do not edit
+ * @FilePath: \HB\Workspace\项目\first\backpage.html
+ * @Description: 耶斯莫拉
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>管理后台</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/nav.css">
+    <link rel="stylesheet" href="./assets/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="./font/iconfont.css">
+    <link rel="stylesheet" href="./assets/css/sweetalert2.min.css">
+    <script src="./assets/js/sweetalert2.min.js"></script>
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/fontawesome.all.js"></script>
+    <script type="text/javascript" src="./assets/js/nav.js"></script>
+    <script type="text/javascript">
+        function showLeftTime() {
+            var now = new Date();
+            var year = now.getFullYear();
+            var month = now.getMonth() + 1;
+            var day = now.getDate();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            //document.all.show.innerHTML = "" + year + "年" + month + "月" + day + "日</br> " + hours + ":" + minutes + ":" + seconds + "";
+            document.getElementById("txt").innerHTML = "" + year + "年" + month + "月" + day + "日 " + hours + ":" + minutes + ":" + seconds + "";
+            //一秒刷新一次显示时间       
+            setTimeout(showLeftTime, 1000);
+        }  
+    </script>
+    <style>
+        .main .main_left {
+            flex-grow: 1;
+            /* border: 1px red solid; */
+            /* display: none; */
+        }
+
+        .main {
+            display: flex;
+            width: 85%;
+            margin: 0 auto;
+            transition: 1.5s;
+        }
+
+        .main .main_right {
+            flex-grow: 1;
+            height: 100vh;
+            overflow: hidden;
+            /* border: 1px red solid; */
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+            width: 1px;
+        }
+
+        .main .main_right iframe {
+            flex-grow: 1;
+            width: 100%;
+            height: 100vh;
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+
+<body onload="showLeftTime()">
+    <!-- 头部导航 -->
+    <div class="header">
+        <div class="title head">
+            <h5 id="home" style="font-size: 1.6rem;">医务后台管理系统</h5>
+        </div>
+        <div class="logout">
+            <a class="button is-light" href="https://github.com/Escher1108/hospitalManage"><i class="fab fa-github"></i>源码</a>
+            <button class="button is-link" id="exit">退出</button>
+        </div>
+    </div>
+
+    <!-- 侧边栏 -->
+    <div class="nav">
+        <div class="nav-top">
+            <div id="mini" style="border-bottom:1px solid rgba(255,255,255,.1)"><img src="./assets/images/mini.png">
+            </div>
+        </div>
+        <ul>
+            <li class="nav-item">
+                <a href="javascript:;"><i class="my-icon nav-icon icon_1"></i><span>系统配置</span><i
+                        class="my-icon nav-more"></i></a>
+                <ul>
+                    <li>
+                        <a id="src" data-src="home.html" data-id="center"><span>网站设置</span></a>
+                    </li>
+                    <li>
+                        <a id="src" data-src="https://jkgblog.com"><span>友情链接</span></a>
+                    </li>
+                    <!-- <li>
+                        <a id="src" data-src=""><span>分类管理</span></a>
+                    </li> -->
+                    <li>
+                        <a id="src" data-src="systenRecord.html"><span>系统日志</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:;"><i class="my-icon nav-icon icon_2"></i><span>医药管理</span><i
+                        class="my-icon nav-more"></i></a>
+                <ul>
+                    <li>
+                        <a id="src" data-src="./medicine/medicInfo.html"><span>医药信息</span></a>
+                    </li>
+                    <li><a id="src" data-src="./medicine/orderList.html"><span>医药支出</span></a></li>
+                    <li>
+                        <a id="src" data-src="./medicine/purchRecord.html"><span>购买日志</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:;"><i class="my-icon nav-icon icon_3"></i><span>财务管理</span><i
+                        class="my-icon nav-more"></i></a>
+                <ul>
+                    <li>
+                        <a id="src" data-src="./orders/financeInfo.html"><span>财务信息</span></a>
+                    </li>
+                    <li><a id="src" data-src="./orders/pay.html"><span>缴费管理</span></a></li>
+                    <li>
+                        <a id="src" data-src="./orders/payRecord.html"><span>缴费记录</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:;"><i class="my-icon nav-icon icon_4"></i><span>用户设置</span><i
+                        class="my-icon nav-more"></i></a>
+                <ul>
+                    <li><a id="src" data-src="./userSet/userinfo.html"><span>用户资料</span></a></li>
+                    <li><a id="src" data-src="./userSet/pwd.html"><span>修改密码</span></a></li>
+                    <li><a id="src" href="javascript:;"><span>修改资料</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 右侧内容 -->
+    <div class="main">
+        <!-- 此处main_left无用 -->
+        <div class="main_left">
+            <div class="container">
+                <div class="box">
+                    <h3 class="title">欢迎用户：<span style="color: royalblue;">xxxx</span></h3>
+                    <b>北京时间：</b><span id="txt"></span>
+                    <hr>
+
+                    <div class="colums is-desktop">
+                        <nav class="level">
+                            <div class="level-item has-text-centered">
+                                <div>
+                                    <p class="heading">Tweets</p>
+                                    <p class="title">3,456</p>
+                                </div>
+                            </div>
+                            <div class="level-item has-text-centered">
+                                <div>
+                                    <p class="heading">Following</p>
+                                    <p class="title">123</p>
+                                </div>
+                            </div>
+                            <div class="level-item has-text-centered">
+                                <div>
+                                    <p class="heading">Followers</p>
+                                    <p class="title">456K</p>
+                                </div>
+                            </div>
+                            <div class="level-item has-text-centered">
+                                <div>
+                                    <p class="heading">Likes</p>
+                                    <p class="title">789</p>
+                                </div>
+                            </div>
+                        </nav>
+
+                        <div class="tile is-ancestor">
+                            <div class="tile is-vertical is-8">
+                                <div class="tile">
+                                    <div class="tile is-parent is-vertical">
+                                        <article class="tile is-child notification is-primary">
+                                            <p class="title">Vertical...</p>
+                                            <p class="subtitle">Top tile</p>
+                                        </article>
+                                        <article class="tile is-child notification is-warning">
+                                            <p class="title">...tiles</p>
+                                            <p class="subtitle">Bottom tile</p>
+                                        </article>
+                                    </div>
+                                    <div class="tile is-parent">
+                                        <article class="tile is-child notification is-info">
+                                            <p class="title">Middle tile</p>
+                                            <p class="subtitle">With an image</p>
+                                            <figure class="image is-4by3">
+                                                <img src="./assets/images/640x480.png">
+                                            </figure>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main_right">
+            <iframe frameborder="0" scrolling="yes" src="" ></iframe>
+        </div>
+    </div>
+
+
+    <!-- iframe控制 -->
+    <script>
+        /* 
+        该处所有js代码均不可改动
+        */
+        $(function () {
+            //此处信息无需修改
+            $('.main_right').hide()
+            $("li #src").on("click", function () {
+                $('.main_left').hide()
+                $('.main_right').show()
+                var address = $(this).attr("data-src");
+                $("iframe").attr("src", address);  //+ "?time=" + new Date().getTime()
+                document.cookie = address;
+                console.log('触发了')
+            });
+
+            //父级刷新记住iframe的src ,刷新页面保持iframe的src
+            window.onload = function () {
+                var x = document.cookie;
+                console.log(x)
+                $('.main_right iframe').attr('src', x)
+                $('.main_right').show()
+                $('.main_left').hide()
+                if (x === "") {
+                    $('.main_right iframe').attr('src', './home.html')
+                }
+            }
+
+            //首页显示监听
+            $('#home').on('click', function () {
+                $('.main_left').hide()
+                $('.main_right').show()
+                var address = './home.html';
+                $("iframe").attr("src", address);  //+ "?time=" + new Date().getTime()
+                document.cookie = address;
+                console.log('触发了')
+
+                // $('.main_right iframe').attr('src', './home.html')
+
+            })
+
+            //退出事件
+            $('#exit').on('click', function () {
+
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You will exit the system!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Exit'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        //函数执行
+                        window.location.href = './login.html'
+                    }
+                })
+            })
+
+            // //获取IP
+            // //Ajax获取IP
+            // function getIp(ip) {
+            //     const URL = 'https://pv.sohu.com/cityjson?ie=utf-8'
+            //     const Type = 'script'
+            //     const Method = 'GET'
+            //     $.ajax({
+            //         url: URL,
+            //         dataType: Type, //跨域验证
+            //         method: Method,
+            //     }).done(function () {
+            //         let ip = returnCitySN.cip
+            //         console.log(ip)
+            //     });
+
+
+            // }
+            // getIp()
+
+        })
+    </script>
+</body>
+
+</html>

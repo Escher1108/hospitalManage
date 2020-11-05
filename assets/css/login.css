@@ -1,0 +1,44 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+}
+
+.containers{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.containers::before{
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background: url(../images/1.jpg) no-repeat;
+    background-size: cover;
+    filter: blur(2px);
+    z-index: -1;
+
+}
+
+.containers .box-containers .left{
+    color: white;
+    position: relative;
+    float: left;
+    padding: 220px 20px 0 15px;
+    width: 350px;
+    max-height: 100vh;
+    height: 100vh;
+    background-color: #272527;
+}
+
+.containers .box-containers .left .sp:hover{
+    color: white;
+}

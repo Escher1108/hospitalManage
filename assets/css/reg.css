@@ -1,0 +1,55 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url(../images/3.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.con{
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* background: linear-gradient(35deg,red,blue); */
+    border-radius: 10px;
+    background: #00000050;
+    box-shadow: 5px 8px 12px rgb(170, 42, 42);
+    
+}
+
+.reg{
+    float: right;
+    width: 350px;
+    height: 420px;
+    padding-top: 50px;
+    margin: 8px;
+}
+.imgs{
+    float: left;
+    width: 350px;
+    height: 420px;
+    margin: 8px;
+    position: relative;
+    background-image: url(../images/1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.reg .rl{
+    /* right: 50%; */
+    transform: translateX(50px);
+}
+
+.field .mylabel{
+    color: white;
+}

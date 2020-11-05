@@ -1,0 +1,181 @@
+<!--
+ * @Author: Escher1108
+ * @Website: https://jkgblog.com
+ * @Date: 2020-10-15 13:44:26
+ * @LastEditTime: 2020-10-17 10:04:32
+ * @LastEditors: Do not edit
+ * @FilePath: \HB\Workspace\项目\first\index.html
+ * @Description: 小白学编程
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <!-- 引入js -->
+    <script src="./assets/js/fontawesome.all.js"></script>
+    <script src="./assets/js/jquery.min.js"></script>
+    <title>首页</title>
+</head>
+
+<body>
+    <div class="bg">
+        <!-- 头部 -->
+        <section>
+            <nav class="navbar tt is-dark" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="#">
+                        <img src="./assets/images/boxa.png">
+                    </a>
+
+                    <a id="nav-toggle" role="button" class="navbar-burger burger" aria-label="menu"
+                        aria-expanded="false" data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+
+                <div id="navbarBasicExample" class="navbar-menu">
+                    <div class="navbar-start">
+                        <a class="navbar-item">
+                            首页
+                        </a>
+
+                        <a class="navbar-item" href="#feature">
+                            特征
+                        </a>
+
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link">
+                                更多
+                            </a>
+
+                            <div class="navbar-dropdown">
+                                <a class="navbar-item">
+                                    About
+                                </a>
+                                <a class="navbar-item">
+                                    Jobs
+                                </a>
+                                <a class="navbar-item">
+                                    Contact
+                                </a>
+                                <hr class="navbar-divider">
+                                <a class="navbar-item">
+                                    Report an issue
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="navbar-end">
+                        <div class="navbar-item">
+                            <div class="buttons">
+                                <!-- 此处绑定登录注册链接 -->
+                                <a class="button is-primary" href="./register.html">
+                                    <strong>注册</strong>
+                                </a>
+                                <a class="button is-light" href="./login.html">
+                                    登录
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </section>
+
+        <!-- 身体 -->
+        <!-- <div class="container">
+            <div class="box" style="margin-top: 250px;">
+                <h2>kkkkk</h2>
+            </div>
+        </div> -->
+
+
+
+
+
+    </div>
+
+    <!-- 特征 -->
+    <!-- <div class="feature" id="feature">
+        You're just too good to be true
+        你美好得如此的不真实
+        I can't take my eyes off you
+        我无法将视线从你身上移开
+        You feel like heaven to touch
+        你就像人们向往的天堂
+        I wanna hold you so much
+        我想拥抱着你
+        As long as love has arrived
+        爱情终於来临
+        And I thank God I'm alive
+        我感谢上帝让我活着
+        You're just too good to be true
+        你美好得如此的不真实
+        I can't take my eyes off you
+        我无法将视线从你身上移开
+
+        Pardon the way that I stare
+        请原谅我注视你的方式
+        There's nothing else to compare
+        你是如此的无与伦比
+        The sight of you leaves me weak
+        你的惊鸿一瞥使我的心一片柔软
+        There are no words left to speak
+        我的感觉无法言说
+        But if you feel like I feel
+        如果你也深有同感
+        Please let me know if it's real
+        一定告诉我，那是真的
+        You're just too good to be true
+        你美好得如此的不真实
+        I can't take my eyes off you
+        我的视线无法离开你
+
+
+        I love you baby
+        宝贝，我是不是
+        And if it's quite all right
+        可以爱你
+        I need you baby
+        宝贝，我需要你
+        To warm a lonely night
+        来温暖这寂寞的夜
+        I love you baby
+        宝贝，我爱你
+        Trust in me when I say
+        请相信我说过的话
+
+        Oh pretty baby
+        噢！亲爱的宝贝
+        Don't bring me down I pray
+        我祈祷你不会让我失望
+        Oh pretty baby
+        噢！亲爱的宝贝
+        Now that I've found you stay
+        既然我发现你已经停留下来
+    </div> -->
+
+    <!-- 自定义JavaScript脚本 -->
+    <script type="text/javascript">
+        $(document).ready(() => {
+            $(".navbar-burger").click(() => {
+                $(".navbar-burger").toggleClass("is-active");
+                $('.navbar-menu').toggle();
+            });
+
+            $("a").click(function () {
+                $("html, body").animate({ scrollTop: $($(this).attr("href")).offset().top - 0+ "px" }, 500);
+                return false;//不要这句会有点卡顿
+            });
+        })
+    </script>
+</body>
+
+</html>
